@@ -1,15 +1,72 @@
 {
-  "name": "react-native-viewpager",
-  "version": "0.2.13",
+  "_args": [
+    [
+      {
+        "raw": "react-native-side-menu@git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+        "scope": null,
+        "escapedName": "react-native-side-menu",
+        "name": "react-native-side-menu",
+        "rawSpec": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+        "spec": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+          "sshUrl": "git+ssh://git@github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+          "httpsUrl": "git+https://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+          "gitUrl": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+          "shortcut": "github:race604/react-native-viewpager#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+          "directUrl": "https://raw.githubusercontent.com/race604/react-native-viewpager/0c72cfafddfd41f1b08c5d9c8886bb79bc43c308/package.json"
+        }
+      },
+      "/Users/dms93/Developer/Ullr/UllrMobile"
+    ]
+  ],
+  "_from": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+  "_id": "react-native-viewpager@0.2.13",
+  "_inCache": true,
+  "_location": "/react-native-viewpager",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-side-menu@git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+    "scope": null,
+    "escapedName": "react-native-side-menu",
+    "name": "react-native-side-menu",
+    "rawSpec": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+    "spec": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+      "sshUrl": "git+ssh://git@github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+      "httpsUrl": "git+https://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+      "gitUrl": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+      "shortcut": "github:race604/react-native-viewpager#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+      "directUrl": "https://raw.githubusercontent.com/race604/react-native-viewpager/0c72cfafddfd41f1b08c5d9c8886bb79bc43c308/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+  "_shasum": "b3ca84cdb24171f45fee9f316fe448dc12592cd7",
+  "_shrinkwrap": null,
+  "_spec": "react-native-side-menu@git://github.com/race604/react-native-viewpager.git#0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+  "_where": "/Users/dms93/Developer/Ullr/UllrMobile",
+  "author": {
+    "name": "Race604"
+  },
+  "bugs": {
+    "url": "https://github.com/race604/react-native-viewpager/issues"
+  },
+  "dependencies": {
+    "react-timer-mixin": "^0.13.3",
+    "warning": "^2.1.0"
+  },
   "description": "ViewPager componnent for React Native",
-  "main": "ViewPager.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/race604/react-native-viewpager.git"
-  },
+  "devDependencies": {},
+  "gitHead": "0c72cfafddfd41f1b08c5d9c8886bb79bc43c308",
+  "homepage": "https://github.com/race604/react-native-viewpager#readme",
   "keywords": [
     "react-native-component",
     "react-component",
@@ -19,14 +76,22 @@
     "viewpager",
     "pager"
   ],
-  "author": "Race604",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/race604/react-native-viewpager/issues"
+  "main": "ViewPager.js",
+  "name": "react-native-viewpager",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "prop-types": ">=15.5.0",
+    "react-native": ">=0.25.0"
   },
-  "homepage": "https://github.com/race604/react-native-viewpager#readme",
-  "dependencies": {
-    "react-timer-mixin": "^0.13.3",
-    "warning": "^2.1.0"
-  }
+  "readme": "# react-native-viewpager\n\n[![npm version](https://img.shields.io/npm/v/react-native-viewpager.svg?style=flat-square)](https://www.npmjs.com/package/react-native-viewpager)\n[![npm downloads](https://img.shields.io/npm/dm/react-native-viewpager.svg?style=flat-square)](https://www.npmjs.com/package/react-native-viewpager)\n\n> @Deprecated This repo is no more maintenance.\n\nThis is the `ViewPager` componnent in React Native both for Android and iOS.\nThis is a JavaScript-only implementation of pager for React Native. Like `ListView`,\nthis can render hundreds of pages without performance issue. Better than the one in\nAndroid, this `ViewPager` can **auto play** -- turn page automaticly, **loop** -- make infinite scrolling.\n\n## Demo\n![](./art/demo.jpg)\n![](./art/anim.gif)\n\nDemo project is [here](./Sample).\n\n## Usage\n\n1. Run `npm install react-native-viewpager --save`\n2. Code like this:\n\n```\nvar ViewPager = require('react-native-viewpager');\n<ViewPager\n    dataSource={this.state.dataSource}\n    renderPage={this._renderPage}/>\n```\n\n## More configuration\n\n* **`dataSource`**: this is require to provide pages data,\n* **`renderPage`**: this is require to render page view,\n* **`autoPlay`**: `true` to turn page automatically,\n* **`initialPage`**: to set the index of the first page to load,\n* **`isLoop`**: `true` to run in infinite scroll mode,\n* **`locked`**: `true` to disable touch scroll,\n* **`onChangePage`**: page change callback,\n* **`renderPageIndicator`**: render custom ViewPager indicator.\n* **`initialPage`**: show initially some other page than first page.\n\n## Page Transition Animation Controls\n\n* **`animation`**: function that returns a React Native Animated configuration.\n\nExample:\n```\nvar ViewPager = require('react-native-viewpager');\n<ViewPager\n    dataSource={this.state.dataSource}\n    renderPage={this._renderPage}\n    animation = {(animatedValue, toValue, gestureState) => {\n    // Use the horizontal velocity of the swipe gesture\n    // to affect the length of the transition so the faster you swipe\n    // the faster the pages will transition\n    var velocity = Math.abs(gestureState.vx);\n    var baseDuration = 300;\n    var duration = (velocity > 1) ? 1/velocity * baseDuration : baseDuration;\n\n    return Animated.timing(animatedValue,\n    {\n      toValue: toValue,\n      duration: duration,\n      easing: Easing.out(Easing.exp)\n    });\n  }}\n/>\n```\n\n## Licensed\n\nMIT License\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/race604/react-native-viewpager.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.13"
 }

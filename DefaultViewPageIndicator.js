@@ -1,7 +1,8 @@
 'use strict';
 
-var React = require('react');
+import React, { Component } from 'react';
 var ReactNative = require('react-native');
+var PropTypes = require('prop-types');
 var {
   Dimensions,
   StyleSheet,
@@ -46,18 +47,28 @@ var styles = StyleSheet.create({
   },
 });
 
-var DefaultViewPageIndicator = React.createClass({
-  propTypes: {
-    goToPage: React.PropTypes.func,
-    activePage: React.PropTypes.number,
-    pageCount: React.PropTypes.number
-  },
+const propTypes = {
+  goToPage: PropTypes.func,
+  activePage: PropTypes.number,
+  pageCount: PropTypes.number
+};
 
-  getInitialState() {
-    return {
+class DefaultViewPageIndicator extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       viewWidth: 0,
     };
-  },
+
+    this.renderIndicator = this.renderIndicator.bind(this);
+  }
+
+  // getInitialState() {
+  //   return {
+  //     viewWidth: 0,
+  //   };
+  // }
 
   renderIndicator(page) {
     //var isTabActive = this.props.activePage === page;
@@ -66,7 +77,7 @@ var DefaultViewPageIndicator = React.createClass({
         <View style={styles.dot} />
       </TouchableOpacity>
     );
-  },
+  }
 
   render() {
     var pageCount = this.props.pageCount;
@@ -99,7 +110,7 @@ var DefaultViewPageIndicator = React.createClass({
         <Animated.View style={[styles.curDot, {left}]} />
       </View>
     );
-  },
-});
+  }
+}
 
 module.exports = DefaultViewPageIndicator;

@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react');
+import React, { Component } from 'react';
 var PropTypes = require('prop-types');
 
 var ReactNative = require('react-native');
@@ -21,33 +21,9 @@ var DefaultViewPageIndicator = require('./DefaultViewPageIndicator');
 var deviceWidth = Dimensions.get('window').width;
 var ViewPagerDataSource = require('./ViewPagerDataSource');
 
-var ViewPager = React.createClass({
-  mixins: [TimerMixin],
-
-  statics: {
-    DataSource: ViewPagerDataSource,
-  },
-
-  propTypes: {
-    ...View.propTypes,
-    dataSource: PropTypes.instanceOf(ViewPagerDataSource).isRequired,
-    renderPage: PropTypes.func.isRequired,
-    onChangePage: PropTypes.func,
-    renderPageIndicator: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.bool
-    ]),
-    isLoop: PropTypes.bool,
-    locked: PropTypes.bool,
-    autoPlay: PropTypes.bool,
-    animation: PropTypes.func,
-    initialPage: PropTypes.number,
-  },
-
-  fling: false,
-
-  getDefaultProps() {
-    return {
+class ViewPager extends Component {
+  constructor(props) {
+    let propsWithDefaults = Object.assign({
       isLoop: false,
       locked: false,
       animation: function(animate, toValue, gs) {
@@ -58,16 +34,17 @@ var ViewPager = React.createClass({
             tension: 50,
           })
       },
-    }
-  },
+    }, props);
+    super(props);
 
-  getInitialState() {
-    return {
+    this.state = {
       currentPage: 0,
       viewWidth: 0,
       scrollValue: new Animated.Value(0)
     };
-  },
+
+    this.renderPageIndicator = this.renderPageIndicator.bind(this);
+  }
 
   componentWillMount() {
     this.childIndex = 0;
@@ -124,13 +101,13 @@ var ViewPager = React.createClass({
         this.goToPage(initialPage, false);
       }
     }
-  },
+  }
 
   componentDidMount() {
     if (this.props.autoPlay) {
       this._startAutoPlay();
     }
-  },
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.autoPlay) {
@@ -157,7 +134,7 @@ var ViewPager = React.createClass({
       this.fling = false;
     }
 
-  },
+  }
 
   _startAutoPlay() {
     if (!this._autoPlayer) {
@@ -166,7 +143,7 @@ var ViewPager = React.createClass({
         5000
       );
     }
-  },
+  }
 
   goToPage(pageNumber, animate = true) {
 
@@ -178,7 +155,7 @@ var ViewPager = React.createClass({
 
     var step = pageNumber - this.state.currentPage;
     this.movePage(step, null, animate);
-  },
+  }
 
   movePage(step, gs, animate = true) {
     var pageCount = this.props.dataSource.getPageCount();
@@ -215,11 +192,11 @@ var ViewPager = React.createClass({
       postChange();
       moved && this.props.onChangePage && this.props.onChangePage(pageNumber);
     }
-  },
+  }
 
   getCurrentPage() {
     return this.state.currentPage;
-  },
+  }
 
   renderPageIndicator(props) {
     if (this.props.renderPageIndicator === false) {
@@ -233,7 +210,7 @@ var ViewPager = React.createClass({
         </View>
       );
     }
-  },
+  }
 
   _getPage(pageIdx: number, loop:boolean) {
     var dataSource = this.props.dataSource;
@@ -250,7 +227,7 @@ var ViewPager = React.createClass({
         )}
       />
     );
-  },
+  }
 
   render() {
     var dataSource = this.props.dataSource;
@@ -329,7 +306,29 @@ var ViewPager = React.createClass({
       </View>
     );
   }
-});
+}
+
+ViewPager.mixins = [TimerMixin];
+
+ViewPager.DataSource = ViewPagerDataSource;
+
+ViewPager.propTypes = {
+  ...View.propTypes,
+  dataSource: PropTypes.instanceOf(ViewPagerDataSource).isRequired,
+  renderPage: PropTypes.func.isRequired,
+  onChangePage: PropTypes.func,
+  renderPageIndicator: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.bool
+  ]),
+  isLoop: PropTypes.bool,
+  locked: PropTypes.bool,
+  autoPlay: PropTypes.bool,
+  animation: PropTypes.func,
+  initialPage: PropTypes.number,
+};
+
+ViewPager.fling = false;
 
 var styles = StyleSheet.create({
   indicators: {
