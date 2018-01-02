@@ -23,18 +23,6 @@ var ViewPagerDataSource = require('./ViewPagerDataSource');
 
 class ViewPager extends Component {
   constructor(props) {
-    let propsWithDefaults = Object.assign({
-      isLoop: false,
-      locked: false,
-      animation: function(animate, toValue, gs) {
-        return Animated.spring(animate,
-          {
-            toValue: toValue,
-            friction: 10,
-            tension: 50,
-          })
-      },
-    }, props);
     super(props);
 
     this.state = {
@@ -44,6 +32,11 @@ class ViewPager extends Component {
     };
 
     this.renderPageIndicator = this.renderPageIndicator.bind(this);
+    this._startAutoPlay = this._startAutoPlay.bind(this);
+    this.goToPage = this.goToPage.bind(this);
+    this.movePage = this.movePage.bind(this);
+    this.getCurrentPage = this.getCurrentPage.bind(this);
+    this._getPage = this._getPage.bind(this);
   }
 
   componentWillMount() {
@@ -329,6 +322,19 @@ ViewPager.propTypes = {
 };
 
 ViewPager.fling = false;
+
+ViewPager.defaultProps = {
+  isLoop: false,
+  locked: false,
+  animation: function(animate, toValue, gs) {
+    return Animated.spring(animate,
+      {
+        toValue: toValue,
+        friction: 10,
+        tension: 50,
+      })
+  },
+};
 
 var styles = StyleSheet.create({
   indicators: {
